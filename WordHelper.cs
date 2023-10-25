@@ -27,11 +27,6 @@ namespace rsad
 
         internal bool Process(Dictionary<string, string> items)
         {
-            //dynamic app = new Word.Application();
-            //Word.Application app1 = null;
-            //try
-            //{
-            //app = new Word.Application();
             dynamic app = new Word.Application();
             Object file = _fileInfo.FullName;
             Object missing = Type.Missing;
@@ -59,10 +54,6 @@ namespace rsad
             app.ActiveDocument.SaveAs2(newFileName);
             DataClass.FileNamePrint = newFileName;
             app.Visible = true;
-            // string file = Date.FileNamePrint.ToString();
-
-            //var docs = app.Documents;
-            // var doc = docs.Open(FileName: file);
             doc.Activate();
 
             int dialogResult = app.Dialogs[Word.WdWordDialog.wdDialogFilePrint].Show();
