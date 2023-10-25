@@ -59,7 +59,17 @@ namespace rsad
             app.ActiveDocument.SaveAs2(newFileName);
             DataClass.FileNamePrint = newFileName;
             app.Visible = true;
-            
+            // string file = Date.FileNamePrint.ToString();
+
+            //var docs = app.Documents;
+            // var doc = docs.Open(FileName: file);
+            doc.Activate();
+
+            int dialogResult = app.Dialogs[Word.WdWordDialog.wdDialogFilePrint].Show();
+
+            app.ActiveDocument.Close();
+
+            return true;
         }
     }
 }
