@@ -32,6 +32,10 @@ namespace rsad
             //try
             //{
             //app = new Word.Application();
+            dynamic app = new Word.Application();
+            Object file = _fileInfo.FullName;
+            Object missing = Type.Missing;
+            dynamic doc = app.Documents.Open(file);
             
         }
     }
