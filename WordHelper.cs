@@ -31,6 +31,7 @@ namespace rsad
             Object file = _fileInfo.FullName;
             Object missing = Type.Missing;
             dynamic doc = app.Documents.Open(file);
+
             foreach (var item in items)
             {
                 Word.Find find = app.Selection.Find;
@@ -54,10 +55,9 @@ namespace rsad
             app.ActiveDocument.SaveAs2(newFileName);
             DataClass.FileNamePrint = newFileName;
             app.Visible = true;
+            
             doc.Activate();
-
             int dialogResult = app.Dialogs[Word.WdWordDialog.wdDialogFilePrint].Show();
-
             app.ActiveDocument.Close();
 
             return true;
