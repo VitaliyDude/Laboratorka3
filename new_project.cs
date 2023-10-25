@@ -2,5 +2,4 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-
-Дописали нового
+xnj-nj nfv
