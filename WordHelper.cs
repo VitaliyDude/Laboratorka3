@@ -36,6 +36,25 @@ namespace rsad
             Object file = _fileInfo.FullName;
             Object missing = Type.Missing;
             dynamic doc = app.Documents.Open(file);
+            foreach (var item in items)
+            {
+                Word.Find find = app.Selection.Find;
+                find.Text = item.Key;
+                find.Replacement.Text = item.Value;
+                Object wrap = Word.WdFindWrap.wdFindContinue;
+                Object replace = Word.WdReplace.wdReplaceAll;
+                find.Execute(FindText: Type.Missing,
+                    MatchCase: false,
+                    MatchWholeWord: false,
+                    MatchWildcards: false,
+                    MatchSoundsLike: missing,
+                    MatchAllWordForms: false,
+                    Forward: true,
+                    Wrap: wrap,
+                    Format: false,
+                    ReplaceWith: missing, Replace: replace);
+            }
+
             
         }
     }
