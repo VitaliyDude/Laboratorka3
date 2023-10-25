@@ -55,6 +55,10 @@ namespace rsad
                     ReplaceWith: missing, Replace: replace);
             }
 
+            Object newFileName = Path.Combine(_fileInfo.DirectoryName, DateTime.Now.ToString("yyyyMMdd HHmmss") + _fileInfo.Name);
+            app.ActiveDocument.SaveAs2(newFileName);
+            DataClass.FileNamePrint = newFileName;
+            app.Visible = true;
             
         }
     }
