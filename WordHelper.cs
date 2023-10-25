@@ -24,5 +24,15 @@ namespace rsad
                 throw new ArgumentException("File not found");
             }
         }
+
+        internal bool Process(Dictionary<string, string> items)
+        {
+            //dynamic app = new Word.Application();
+            //Word.Application app1 = null;
+            //try
+            //{
+            //app = new Word.Application();
+            
+        }
     }
 }
